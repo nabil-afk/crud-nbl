@@ -37,7 +37,7 @@ html
 					.login-box-body.col-md-7(style="background-color: #ffffff20; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding-left: 4%; padding-right: 4%; padding-bottom: 9%; padding-top: 9%; border: 1px solid lightgrey;")
 						p.login-box-msg(style="color: #15395B; font-size: 30px; margin-bottom: 15px; font-weight: bold;")
 							| Sign In To Your Account
-						form(action="/login/",method="post")
+						form(action="/login",method="post")
 							.form-floating.has-feedback
 								input(type="email",placeholder="Email",name="txtEmail" style="font-size: 17px; font-weight: 500; border-radius: 8px; padding-bottom: 20px; padding-top: 20px; margin-bottom: 10px").form-control
 								span.glyphicon.glyphicon-envelope.form-control-feedback(style="padding-bottom: 4px; padding-top: 4px;")
