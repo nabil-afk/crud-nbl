@@ -1,0 +1,30 @@
+header.main-header
+    a(href='/').logo
+        span.logo-mini(style="background-color: #fff")
+            .pull-left.image 
+                img(src='/adminlte/dist/img/item.png',alt='User Image', style='width: 50px; padding-bottom: 3px, margin-left: -1px;').img-align-left.img-circle
+        span.logo-lg
+            <b>Daftar Member</b>
+    nav(role='navigation').navbar.navbar-static-top
+        a(href='#', role='button', data-toggle='offcanvas').sidebar-toggle.fa6.sidebar-mini
+            span.sr-only Toggle Navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        div.navbar-custom-menu
+            ul.nav.navbar-nav
+                    li.dropdown.user.user-menu
+                        a(href='#',data-toggle='dropdown').dropdown-toggle
+                            img(src='/adminlte/dist/img/user2-160x160.jpg',alt='UserImage').user-image
+                            span.hidden-xs
+                                | Nabil Dzakwan
+                        ul.dropdown-menu
+                            li.user-header
+                                img(src='/adminlte/dist/img/user2-160x160.jpg',alt='UserImage').img-circle
+                                p
+                                    | Nabil Dzakwan - Informatika
+                                    small
+                                        | Member since Feb. 2020
+                            li.user-footer
+                                    a(href='/logout').btn.btn-default.btn-flat
+                                        | Keluar

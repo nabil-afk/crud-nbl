@@ -1,0 +1,70 @@
+extends ../layout/base 
+block content 
+	section.content-header 
+		h1 
+			| Edit Member
+			small menu for editing member data
+		ol.breadcrumb 
+			li 
+				a(href='#') 
+					i.fa.fa-dashboard
+					| Level 
+			li.active Here 
+	section.content
+		.box
+			.box-header.with-border
+				h3.box-title
+					| Member
+				.box-tools.pull-right
+					button(type='button' data-widget='collapse' data-toggle='tooltip' title='collapse').btn.btn-box-tool
+						i.fa.fa-minus
+
+			.box-body
+				form(role='form' method='post' action='/customers/edit/#{(id==undefined) ? data.id : id}' enctype="multipart/form-data")
+					.row
+
+						.col-xs-6
+							.box-body
+								- if (messages.msg_error) 
+									.alert.alert-danger.alert-dismissable 
+										button.close(type='button' data-dismiss='alert' aria-hidden='true') 
+											| ×
+										h4
+											i.icon.fa.fa-ban
+											| Alert! 
+										| !{messages.msg_error}
+								- if (messages.msg_info) 
+									.alert.alert-success.alert-dismissable 
+										button.close(type='button' data-dismiss='alert' aria-hidden='true') 
+											| ×
+										h4
+											i.icon.fa.fa-check
+											| Success! 
+										| !{messages.msg_info}
+								.form-group
+									label
+										| Nama
+									input(type='text' value="#{data.nama}" name='nama' placeholder='Enter Nama', autofocus).form-control
+								.form-group
+									label
+										| Alamat
+									input(type='text' value="#{ (alamat == undefined) ? data.alamat : alamat }" name='alamat' placeholder='Enter alamat').form-control
+								.form-group
+									label
+										| No Hp
+									input(type='text' value="#{ (no_hp == undefined) ? data.no_hp : no_hp }" name='no_hp' placeholder='Enter Phone').form-control
+								.form-group
+									label
+										| Tanggal Masuk
+									input(type='text' value="#{ (tanggal_masuk == undefined) ? data.tanggal_masuk : tanggal_masuk }" name='tanggal_masuk' placeholder='Enter tanggal').form-control
+								.form-group
+									label
+										| Gambar
+									input(type='file' name='gambar' value="#{ (gambar == undefined) ? data.gambar : gambar }").form-control
+								.box-footer
+								input(type="hidden" name="_method" value="PUT")
+								button(type='submit').btn.btn-primary
+									i.fa.fa-pencil 
+									|  Edit
+								a(href='/customers').btn.btn-primary.pull-right
+									| Back
